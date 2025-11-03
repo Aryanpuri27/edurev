@@ -27,11 +27,7 @@ const EduRevProjectForm = () => {
     toolsTechnologies: "",
     startDate: "",
     completionDate: "",
-    projectGoals: "",
-    deliverables: "",
-    methodology: "",
-    results: "",
-    impact: "",
+    details: "",
     repositoryUrl: "",
     liveDemoUrl: "",
     teamMembers: "",
@@ -95,11 +91,7 @@ const EduRevProjectForm = () => {
         toolsTechnologies: "",
         startDate: "",
         completionDate: "",
-        projectGoals: "",
-        deliverables: "",
-        methodology: "",
-        results: "",
-        impact: "",
+        details: "",
         repositoryUrl: "",
         liveDemoUrl: "",
         teamMembers: "",
@@ -246,35 +238,15 @@ const EduRevProjectForm = () => {
               </div>
 
               <div className="space-y-4 border-b pb-6">
-                <h3 className="text-lg font-semibold text-primary">Project Goals & Outcomes</h3>
+                <h3 className="text-lg font-semibold text-primary">Details</h3>
                 <div className="space-y-2">
-                  <Label htmlFor="projectGoals">Project Goals</Label>
+                  <Label htmlFor="details">Project Details</Label>
                   <Textarea
-                    id="projectGoals"
-                    placeholder="What were the main goals of this project?"
-                    value={formData.projectGoals}
-                    onChange={(e) => setFormData({...formData, projectGoals: e.target.value})}
-                    className="min-h-[100px]"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="deliverables">Key Deliverables</Label>
-                  <Textarea
-                    id="deliverables"
-                    placeholder="What did you deliver? (features, documentation, etc.)"
-                    value={formData.deliverables}
-                    onChange={(e) => setFormData({...formData, deliverables: e.target.value})}
-                    className="min-h-[can h-[80px]"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="results">Results & Achievements</Label>
-                  <Textarea
-                    id="results"
-                    placeholder="What were the outcomes? Any metrics, awards, or recognition?"
-                    value={formData.results}
-                    onChange={(e) => setFormData({...formData, results: e.target.value})}
-                    className="min-h-[80px]"
+                    id="details"
+                    placeholder="Provide comprehensive details about your project including goals, deliverables, methodology, results, achievements, impact, and any other relevant information..."
+                    value={formData.details}
+                    onChange={(e) => setFormData({...formData, details: e.target.value})}
+                    className="min-h-[150px]"
                   />
                 </div>
               </div>
