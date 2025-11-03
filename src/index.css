@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Academic Excellence Design System - Edu Perks Portal */
+
+@layer base {
+  :root {
+    /* LPU Orange Theme Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+
+    /* Card & Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --card-accent: 35 100% 96%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    /* LPU Orange Primary Colors */
+    --primary: 30 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 35 100% 70%;
+
+    /* LPU Secondary Colors */
+    --secondary: 35 100% 96%;
+    --secondary-foreground: 0 0% 15%;
+
+    /* Muted & Neutral Colors */
+    --muted: 35 100% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* LPU Accent Colors */
+    --accent: 25 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 35 100% 75%;
+
+    /* Status Colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Border & Input Colors */
+    --border: 35 100% 90%;
+    --input: 35 100% 90%;
+    --ring: 30 100% 55%;
+
+    /* LPU Orange Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(30 100% 55%), hsl(35 100% 70%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(35 100% 96%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 100% 50%), hsl(35 100% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(35 100% 96%), hsl(0 0% 100%));
+
+    /* LPU Elegant Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(35 100% 90% / 0.4), 0 2px 4px -2px hsl(35 100% 90% / 0.4);
+    --shadow-hero: 0 20px 40px -12px hsl(30 100% 55% / 0.25);
+    --shadow-accent: 0 10px 30px -10px hsl(25 100% 50% / 0.3);
+    --shadow-elegant: 0 8px 32px hsl(35 100% 90% / 0.6);
+
+    /* Smooth Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode LPU Orange Colors */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --card-accent: 30 50% 15%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 30 100% 55%;
+    --primary-foreground: 0 0% 5%;
+    --primary-glow: 35 100% 70%;
+
+    --secondary: 30 50% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 30 50% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 25 100% 50%;
+    --accent-foreground: 0 0% 5%;
+    --accent-glow: 35 100% 75%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 30 100% 55%;
+
+    /* Dark Mode LPU Orange Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(30 100% 55%), hsl(35 100% 70%));
+    --gradient-card: linear-gradient(145deg, hsl(30 50% 15%), hsl(0 0% 8%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 100% 50%), hsl(35 100% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(30 50% 15%), hsl(0 0% 8%));
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 30 100% 55%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 30 50% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 30 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Academic Typography */
+  .academic-heading {
+    @apply font-bold tracking-tight;
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Ensure proper text rendering on all browsers */
+  @supports not (-webkit-background-clip: text) {
+    .academic-heading {
+      color: hsl(var(--primary));
+    }
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/30;
+  }
+}
+
+@layer utilities {
+  /* Custom Gradient Utilities */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .bg-gradient-secondary {
+    background: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+  }
+
+  /* Shadow Utilities */
+  .shadow-hero {
+    box-shadow: var(--shadow-hero);
+  }
+
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
